@@ -1,0 +1,5 @@
+# spring framework
+https://repo.spring.io/release/org/springframework/spring/
+1. create java project
+2. create lib folder -> copy jar file of spring framework
+3. Right click project -> Properties -> Java Build Path -> Libraries -> ClassPath -> Add jars file (Spring framework)
