@@ -1,0 +1,30 @@
+1. Dependency Injection
+The dependency inversion priciple.
+The client delegates to calls to another object the responsibility of providing its dependencies.
+Example: 1. give me a "Car" object <-> Car Factory (all the different parts for the car: the tires, the seats, so on)
+	2. "dependency" same thing as "helper objects". So they inject the engine, they inject the tires.
+* Spring Container: primary functions
+	1. Create and manage objects (Inversion of Control)
+	2. Inject object's dependencies (Dependency Injection)
+* Development Process - constructor Injection
+	1. Define the dependency interface and class
+	2. Create a constructor in your class for injections
+	3. Configure the dependency injection in Spring config file
+* The Spring Framework will perform operations behind the scenes for you
+Explain: When Spring Container run -> applicationContext.xml ->
+every beans will run step by step -> create the object (bean) and so on
+	
+	<!-- step 1 instance object -->
+	<bean id="myFortuneService"
+		class="com.hcode.springdemo.HappyFortuneService">
+	</bean>
+	<!-- step 2 inject another object by constructor -->
+	<bean id="myCoach"
+		class="com.hcode.springdemo.BaseballCoach">
+		<constructor-arg ref="myFortuneService"/>
+	</bean>
+	
+	1. instance object:
+	HappyFortuneService myFortuneService = new HappyFortuneService();
+	2. inject another object by constructor
+	BaseballCoach myCoach = new BaseballCoach(myFortuneService);

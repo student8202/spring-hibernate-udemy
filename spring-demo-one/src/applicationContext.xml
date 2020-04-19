@@ -18,10 +18,14 @@
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
-    
+    <!-- define your beans here -->
+	<bean id="myFortuneService"
+		class="com.hcode.springdemo.HappyFortuneService">
+	</bean>
 	<!-- define your beans here -->
 	<bean id="myCoach"
 		class="com.hcode.springdemo.BaseballCoach">
+		<constructor-arg ref="myFortuneService"/>
 	</bean>
 
 </beans>
