@@ -1,0 +1,11 @@
+The approach of outsourcing the construction and management of objects.
+
+sumary: outsource to an object factory
+example: with a very rough prototype
+
+My App <-> getDailyWorkout() <-> BaseballCoach
+
+_ App should be configurable
+_ Easily change the coach for another sport
+	Hockey, Cricket, Tennis, Gymnastics, etc,...
+
