@@ -11,3 +11,15 @@ _ Easily change the coach for another sport
 	Hockey, Cricket, Tennis, Gymnastics, etc,...
 
 2. Spring Inversion of Control
+Spring (Object Factory)
+* Primary functions:
+	1. Create and manage objects (Inversion of Control)
+	2. Inject object's dependencies (Dependency Injection)
+* Spring Development Process
+	1. Configure your Spring Beans
+	2. Create a Spring Container
+	3. Retrieve Beans from Spring Container
+* Spring container is generically known as ApplicationContext
+* What is a Spring Bean?
+	When Java object are created by the Spring Container, then Spring refers to them as "Spring Beans".
+	Spring Beans are created from normal Java classes... just like Java objects.
