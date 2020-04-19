@@ -8,4 +8,10 @@ public class TrackCoach implements ICoach {
 		return "Run a hard 5 km";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
