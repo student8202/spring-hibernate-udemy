@@ -1,3 +1,4 @@
+1. Java Inversion control
 The approach of outsourcing the construction and management of objects.
 
 sumary: outsource to an object factory
@@ -9,3 +10,4 @@ _ App should be configurable
 _ Easily change the coach for another sport
 	Hockey, Cricket, Tennis, Gymnastics, etc,...
 
+2. Spring Inversion of Control
