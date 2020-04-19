@@ -24,8 +24,7 @@ public class BaseballCoach implements ICoach{
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return fortuneService.getFortune();
 	}
 
 }

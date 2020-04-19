@@ -22,8 +22,7 @@ public class TrackCoach implements ICoach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Just Do It: " + fortuneService.getFortune();
 	}
 
 }

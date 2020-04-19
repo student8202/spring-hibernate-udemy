@@ -25,7 +25,7 @@
 	</bean>
 	
 	<bean id="myCoach"
-		class="com.hcode.springdemo.BaseballCoach">
+		class="com.hcode.springdemo.TrackCoach">
 		<!-- set up constructor injection -->
 		<constructor-arg ref="myFortuneService"/>
 	</bean>
