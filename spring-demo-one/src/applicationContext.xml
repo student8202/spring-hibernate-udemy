@@ -7,18 +7,20 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+	<!-- load properties file in Spring config file: sport.properties -->
+	<context:property-placeholder location="classpath:sport.properties"/>
 	<!-- 
 		Add a logger config to see logging messages.		
 		- For more detailed logs, set values to "FINEST"
-		(INFO, CONFIG, FINE, FINER, FINEST)
+		(SEVERE (highest), WARNING, INFO, CONFIG, FINE, FINER, FINEST)
 		- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
 	 -->
+	 
     <bean id="myLoggerConfig" class="com.hcode.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
-    
+     
     <!-- define the dependency -->
 	<bean id="myFortuneService"
 		class="com.hcode.springdemo.HappyFortuneService">
@@ -36,8 +38,8 @@
 		<property name="fortuneService" ref="myFortuneService" />
 		
 		<!-- inject literal values -->
-		<property name="emailAddress" value="literal@gmail.com"/>
-		<property name="team" value="Sunrise team"/>
+		<property name="emailAddress" value="${foo.email}"/>
+		<property name="team" value="${foo.team}"/>
 	</bean>
 
 </beans>
