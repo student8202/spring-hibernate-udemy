@@ -16,40 +16,37 @@ So by default, the scope is singleton.
 	2. prototype (create a new bean instance for each container request)
 	2. request, session, global-session (only used for web apps)
 ---------------------------------------------
-* The Spring Framework will perform operations behind the scenes for you
-Explain: When Spring Container run -> applicationContext.xml ->
-every beans will run step by step -> create the object (bean) and so on
-	
-	<!-- step 1 instance object -->
-	<bean id="myFortuneService"
-		class="com.hcode.springdemo.HappyFortuneService">
-	</bean>
-	<!-- step 2 inject another object by constructor -->
-	<bean id="myCoach"
-		class="com.hcode.springdemo.BaseballCoach">
-		<constructor-arg ref="myFortuneService"/>
-	</bean>
-	
-	1. instance object:
-	HappyFortuneService myFortuneService = new HappyFortuneService();
-	2. inject another object by constructor
-	BaseballCoach myCoach = new BaseballCoach(myFortuneService);
+* Bean Lifecycle
+Container started -> Bean instantiated -> Dependencies Injected -> Internal Spring Processing 
+-> Your Custom Init Method -> Bean Is ready for use/Container Is Shutdown
+-> Your Custom Destroy Method -> Stop
 ------------------------------------------------------
-FAQ: What is the purpose for the no arg constructor?
-
-
-
-Question:
-I was wondering why you created a no arg constructor? I thought that they are implied by Java and only required when you also have an overloaded constructor. Or is this a Spring specific thing?
-
----
-
-
-Answered by: Oleksandr Palamarchuk
-
-When you don’t define any constructor in your class, compiler defines default one for you, however when you declare any constructor (in your example you have already defined a parameterized constructor), compiler doesn’t do it for you.
-
-Since you have defined a constructor in class code, compiler didn’t create default one. While creating object you are invoking default one, which doesn’t exist in class code. Then the code gives an compilation error.
-
+* Bean Licycle Methods / Hooks
+	1. You can add custom code during ***bean initalization
+	init-method="doMyStartupStuff"
+	2. Calling custom business logic methods
+	3. Setting up handles to resources (db, socket, file, etc)
+	1. You can add custom code during ***bean destruction
+	destroy-method="doMyCleanupStuff"
+	2. Calling custom business logic method
+	3. Clean up handles to resources (db, socket, file, etc)
 ------------------------------------------------
-* Inside class: copy qualified name (get class package)
+* Development Process
+	1. Define you methods for init and destroy
+	2. Configure the method names in Spring config file
+------------------------------------------------------
+* Special Note about init and destroy Method Signatures
+
+When using XML configuration, I want to provide additional details regarding the method signatures of the init-method  and destroy-method .
+
+* Access modifier
+The method can have any access modifier (public, protected, private)
+
+* Return type
+The method can have any return type. However, "void' is most commonly used. If you give a return type just note that you will not be able to capture the return value. As a result, "void" is commonly used.
+
+* Method name
+The method can have any method name.
+
+* Arguments
+The method can not accept any arguments. The method should be no-arg.
