@@ -26,10 +26,20 @@
 		class="com.hcode.springdemo.HappyFortuneService">
 	</bean>
 	
+	<bean id="myRandomFortuneService"
+		class="com.hcode.springdemo.RandomFortuneService">
+	</bean>
+	
 	<bean id="myCoach"
 		class="com.hcode.springdemo.TrackCoach">
 		<!-- set up constructor injection -->
 		<constructor-arg ref="myFortuneService"/>
+	</bean>
+	
+	<bean id="myRandomCoach"
+		class="com.hcode.springdemo.BaseballCoach">
+		<!-- set up constructor injection -->
+		<constructor-arg ref="myRandomFortuneService"/>
 	</bean>
 	
 	<bean id="myCricketCoach" 
