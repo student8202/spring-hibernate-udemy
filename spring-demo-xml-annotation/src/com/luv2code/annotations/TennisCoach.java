@@ -6,40 +6,36 @@ import org.springframework.stereotype.Component;
 
 @Component()
 public class TennisCoach implements ICoach {
-	
+
 //	@Autowired
 //	@Qualifier("randomFortuneService")
 	private IFortuneService myForturneService;
-	
+
 	// define a default constructor
 	public TennisCoach() {
 		System.out.println(">> TennisCoach: inside default constructor");
 	}
-	
+
 	/*
-	// define a setter method
-	@Autowired
-	public void setMyFortuneService(IFortuneService myFortuneService) {
-		System.out.println(">> TennisCoach: inside setMyFortuneService method");
-		this.myForturneService = myFortuneService;
-	}
-	*/
-	
+	 * // define a setter method
+	 * 
+	 * @Autowired public void setMyFortuneService(IFortuneService myFortuneService)
+	 * { System.out.println(">> TennisCoach: inside setMyFortuneService method");
+	 * this.myForturneService = myFortuneService; }
+	 */
+
 	/*
-	// define a any method
-		@Autowired
-		public void doAnyCrazyStuff(IFortuneService myFortuneService) {
-			System.out.println(">> TennisCoach: inside doAnyCrazyStuff method");
-			this.myForturneService = myFortuneService;
-		}
-		*/
-	
-	
+	 * // define a any method
+	 * 
+	 * @Autowired public void doAnyCrazyStuff(IFortuneService myFortuneService) {
+	 * System.out.println(">> TennisCoach: inside doAnyCrazyStuff method");
+	 * this.myForturneService = myFortuneService; }
+	 */
+
 	@Autowired
-	public TennisCoach(@Qualifier("randomFortuneService")IFortuneService myForturneService) {
+	public TennisCoach(@Qualifier("randomFortuneService") IFortuneService myForturneService) {
 		this.myForturneService = myForturneService;
 	}
-	
 
 	@Override
 	public String getDailyWorkout() {
