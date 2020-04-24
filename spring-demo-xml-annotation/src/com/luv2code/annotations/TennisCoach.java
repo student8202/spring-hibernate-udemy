@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Component()
 public class TennisCoach implements ICoach {
 	
-	@Autowired
-	@Qualifier("randomFortuneService")
+//	@Autowired
+//	@Qualifier("randomFortuneService")
 	private IFortuneService myForturneService;
 	
 	// define a default constructor
@@ -34,12 +34,12 @@ public class TennisCoach implements ICoach {
 		}
 		*/
 	
-	/*
+	
 	@Autowired
-	public TennisCoach(IFortuneService myForturneService) {
+	public TennisCoach(@Qualifier("randomFortuneService")IFortuneService myForturneService) {
 		this.myForturneService = myForturneService;
 	}
-	*/
+	
 
 	@Override
 	public String getDailyWorkout() {
