@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyLoggerConfig {
 	// In Spring 5.1
-	@Value("FINE")
+	@Value("${log.rootLoggerLevel}")
 	private String rootLoggerLevel;
 	
-	@Value("FINE")
+	@Value("${log.printedLoggerLevel}")
 	private String printedLoggerLevel;
 	
 	

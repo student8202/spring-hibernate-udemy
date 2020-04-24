@@ -7,5 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- load a file config -->
+	<context:property-placeholder location="classpath:config.properties"/>
+	<!-- scan all the components --> 
 	<context:component-scan base-package="com.luv2code.annotations"/>
 </beans>
