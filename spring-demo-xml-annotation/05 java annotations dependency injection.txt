@@ -25,6 +25,12 @@ call method
 	2. Create a constructor in your class for injections
 	3. Configure the dependency injection with **@Autowired** Anotation
 -------------------------------------------------------------
+* Autowiring Example
+	1. Injecting IFortuneService into a ICoach implementation
+	2. Spring will scan @Components
+	3. Any one implements IFortuneService interface???
+	4. If so, let's inject them. For example: HappyFortuneService
+-------------------------------------------------------------
 * Multiple Implementations?
 AUTOWIRING
 
