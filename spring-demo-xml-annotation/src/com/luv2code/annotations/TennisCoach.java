@@ -2,13 +2,15 @@ package com.luv2code.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component()
+@Scope("prototype")
 public class TennisCoach implements ICoach {
 
-//	@Autowired
-//	@Qualifier("randomFortuneService")
+	@Autowired
+	@Qualifier("randomFortuneService")
 	private IFortuneService myForturneService;
 
 	// define a default constructor
@@ -31,12 +33,14 @@ public class TennisCoach implements ICoach {
 	 * System.out.println(">> TennisCoach: inside doAnyCrazyStuff method");
 	 * this.myForturneService = myFortuneService; }
 	 */
-
+	
+	/*
 	@Autowired
 	public TennisCoach(@Qualifier("randomFortuneService") IFortuneService myForturneService) {
 		this.myForturneService = myForturneService;
 	}
-
+	*/
+	
 	@Override
 	public String getDailyWorkout() {
 		return "Practice your backhand volley";

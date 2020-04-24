@@ -1,0 +1,86 @@
+1. Bean Scopes
+	1. Scope refers to lifecycle of a bean
+	2. How long does the bean live?
+	3. How many instances are created?
+	4. How is the bean shared?
+DEFAULT SCOPE IS SINGLETON
+------------------------------------------------------------------
+* Refresher: What is a Singleton?
+	1. Spring Container creates only one instance of the bean, by default
+	2. It is cached in memory
+	3. All requests for the bean
+	will return a SHARED reference the SAME bean
+------------------------------------------------------------------
+*
+@Component
+@Scope("singleton") // prototype
+public class TennisCoach implements ICoach{...}
+------------------------------------------------------------------
+* Bean Lifecycle Methods / Hooks
+	1. You can add custom code during **bean initalization**
+	Calling custom business logic methods
+	Setting up handles to resources (db, sockets, file etc)
+	2. You can add custom code during **bean destruction**
+	Calling custom business logic method
+	Clean up handles to resources (db, sockets, file etc)
+------------------------------------------------------------------
+* Development Process Lifecycle
+	1. Define your methods for init and destroy
+	2. Add annotations: @PostConstruct and @PreDestroy
+@PostConstruct
+public void doMyStartupStuff() {...}
+@PreDestroy
+public void doMyCleanupStuff() {...}
+------------------------------------------------------------------
+* Special Note about @PostConstruct and @PreDestroy Method Signatures
+
+I want to provide additional details regarding the method signatures of @PostContruct and @PreDestroy methods.
+
+**Access modifier**
+
+The method can have any access modifier (public, protected, private)
+
+**Return type**
+The method can have any return type. However, "void' is most commonly used. If you give a return type just note that you will not be able to capture the return value. As a result, "void" is commonly used.
+
+**Method name**
+The method can have any method name.
+
+**Arguments**
+The method can not accept any arguments. The method should be no-arg.
+------------------------------------------------------------------
+* Error
+
+Eclipse is unable to import @PostConstruct or @PreDestroy
+
+This happens because of Java 9 and higher. 
+
+When using Java 9 and higher, javax.annotation has been removed from its default classpath. That's why we Eclipse can't find it.
+---
+Solution
+
+1. Download the javax.annotation-api-1.3.2.jar from 
+
+https://search.maven.org/remotecontent?filepath=javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar
+
+2. Copy the JAR file to the lib folder of your project
+------------------------------------------------------------------
+* Here is a subtle point you need to be aware of with "prototype" scoped beans.
+
+For "prototype" scoped beans, Spring does not call the @PreDestroy method.  Gasp!  
+------------------------------------------------------------------
+* QUESTION: How can I create code to call the destroy method on prototype scope beans
+
+**ANSWER**:
+
+You can destroy prototype beans but custom coding is required. This examples shows how to destroy prototype scoped beans.
+
+1. Create a custom bean processor. This bean processor will keep track of prototype scoped beans. During shutdown it will call the destroy() method on the prototype scoped beans.
+
+2. The prototype scoped beans MUST implement the DisposableBean interface. This interface defines a "destory()" method. This method should be used instead of the @PostDestroy annotation.
+
+3. In this app, BeanProcessorDemoApp.java is the main program. TennisCoach.java is the prototype scoped bean. TennisCoach implements the DisposableBean interface and provides the destroy() method. The custom bean processing is handled in the MyCustomBeanProcessor class.
+
+------------------------------------------------------------------
+*
+
