@@ -15,8 +15,8 @@
 ------------------------------------------------------------------
 * 
 @Configuration
-@ComponentScan("com.luv2code.springdemo")
-public class Config {...}
+@ComponentScan("com.luv2code.springdemo") // auto scan components
+public class Config {...} // do not have beans
 
 AnnotationConfigApplicationContext context = 
 	new AnnotationConfigApplicationContext(SportConfig.class);
@@ -31,9 +31,18 @@ AnnotationConfigApplicationContext context =
 	3. Read Spring Java configuration class
 	4. Retrieve bean from Spring container
 ------------------------------------------------------------------
-* 
+* @Bean
+	So we/ve written a code in our configuration class (SportConfig)
+	to actually define our beans manually.
 ------------------------------------------------------------------
-*
+* 
+@Configuration
+public class Config {
+	// have beans
+	// define bean for our sad fortune service (beanId)
+	
+	// define bean for our swim coach AND inject dependency by beanId
+} 
 ------------------------------------------------------------------
 *
 

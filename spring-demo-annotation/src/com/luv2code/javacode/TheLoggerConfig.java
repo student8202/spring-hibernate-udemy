@@ -10,6 +10,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
@@ -23,8 +24,8 @@ public class TheLoggerConfig {
 	@Value("${printed.logger.level}")
 	private String printedLoggerLevel;
 
-//	@PostConstruct
-	@Autowired
+	@PostConstruct
+//	@Autowired // when use @ComponentScan
 	public void initLogger() {
 		System.out.println(">> call initLogger");
 		// parse levels
