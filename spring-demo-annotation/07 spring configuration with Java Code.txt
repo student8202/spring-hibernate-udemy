@@ -1,0 +1,48 @@
+1. Java configuration
+	1. Instead of configuring Spring container using XML
+	2. Configure the Spring continer with Java code (no XML)
+------------------------------------------------------------------
+* 3 ways of configuring Spring Container
+	1. Full xml config
+	2. xml component scan
+	3. Java Configuration Class
+------------------------------------------------------------------
+* Development Process Java configuration
+	1. Create a Java class and annotate as @Configuration
+	2. Add component scanning support @ComponentScan (optional)
+	3. Read Spring Java configuration class
+	4. Retrieve bean from Spring container
+------------------------------------------------------------------
+* 
+@Configuration
+@ComponentScan("com.luv2code.springdemo") // auto scan components
+public class Config {...} // do not have beans
+
+AnnotationConfigApplicationContext context = 
+	new AnnotationConfigApplicationContext(SportConfig.class);
+------------------------------------------------------------------
+* Define Spring Beans with Java code
+	1. Full xml config
+	2. Java configuration class
+------------------------------------------------------------------
+* Development Process Spring Beans
+	1. Define method to expose bean
+	2. Inject bean dependencies
+	3. Read Spring Java configuration class
+	4. Retrieve bean from Spring container
+------------------------------------------------------------------
+* @Bean
+	So we/ve written a code in our configuration class (SportConfig)
+	to actually define our beans manually.
+------------------------------------------------------------------
+* 
+@Configuration
+public class Config {
+	// have beans
+	// define bean for our sad fortune service (beanId)
+	
+	// define bean for our swim coach AND inject dependency by beanId
+} 
+------------------------------------------------------------------
+*
+
