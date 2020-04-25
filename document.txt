@@ -1,2 +1,6 @@
+# Option 2: Download using git command-line
 git clone https://github.com/darbyluv2code/spring-and-hibernate-for-beginners.git
 
+# All slides which are shown during the course are available also as a reference and can be downloaded here:
+
+https://drive.google.com/drive/folders/1zDfab3auDuLhFwmnQpZy5RIATU43qopZ
