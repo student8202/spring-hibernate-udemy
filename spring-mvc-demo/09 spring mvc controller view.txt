@@ -1,0 +1,31 @@
+1. Development Process
+	1. Create Controller class
+	2. Define Controller method
+	3. Add Request Mapping to Controller method
+	4. Return View Name 
+	5. Develop View Page
+--------------------------------------
+* @Controller inherits from @Component
+so it's really just a specialized component that supports web MVC
+--------------------------------------
+* 
+Step 1: Configure Spring MVC Dispatcher Servlet
+
+Step 2: Set up URL mapping for Spring MVC Dispatcher Servlet
+
+	<!-- Step 3: Add support for component scanning -->
+	<context:component-scan base-package="com.luv2code.springdemo" />
+
+	<!-- Step 4: Add support for conversion, formatting and validation support -->
+	<mvc:annotation-driven/>
+
+	<!-- Step 5: Define Spring MVC view resolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+--------------------------------------
+*
+--------------------------------------
+*
