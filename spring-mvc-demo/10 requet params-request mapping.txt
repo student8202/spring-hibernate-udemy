@@ -1,0 +1,18 @@
+* 
+public String actionFormVersionThree(
+			@RequestParam("studentName") String theName, 
+			Model model) {...}
+---------------------------------
+* 
+@RequestMapping("/hello")
+public class SillyController {...}
+---------------------------------
+* 
+<form action="actionFormVersionThree" method="GET">
+		<input type="text" name="studentName" placeholder="What is your name?" />
+		<input type="submit"/>
+	</form>
+**actionFormVersionThree**
+The key here is relative path of showing the form and then submitting to relative path.
+
+---------------------------------
