@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +22,7 @@
 
 <img src="${pageContext.request.contextPath}/resources/images/mvc.png" width="600" height="300"/>
 
-<br><br>
+<br/><br/>
 
 <input type="button" onclick="doSomeWork()" value="Click Me"/>
 
