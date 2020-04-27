@@ -10,4 +10,9 @@ public class HomeController {
 	public String showPage() {
 		return "main-menu";
 	}
+	
+	@RequestMapping("/main")
+	public String showPageVersion2() {
+		return "main-menu-2";
+	}
 }

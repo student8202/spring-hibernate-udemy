@@ -33,4 +33,46 @@ Step 2: Set up URL mapping for Spring MVC Dispatcher Servlet
 	strings, objects, info from database, etc,...
 	3. Your View page (jsp) can access data from the **model**
 --------------------------------------
-*
+* Deploying to tomcat using war files
+---
+
+1. In Eclipse, stop Tomcat
+
+2. Right-click your project and select Export > WAR File
+
+3. In the Destination field, enter: <any-directory>/mycoolapp.war
+
+4. Outside of Eclipse, start Tomcat
+- If you are using MS Windows, then you should find it on the Start menu
+
+5. Make sure Tomcat is up and running by visiting: http://localhost:8080
+
+6. Deploy your new WAR file by copying it to <tomcat-install-directory>\webapps
+
+Give it about 10-15 seconds to make the deployment. You'll know the deployment is over because you'll see a new folder created in webapps ... with your WAR file name.
+
+7. Visit your new app. If your war file was: mycoolapp.war then you can access it with:  http://localhost:8080/mycoolapp/
+
+--------------------------------------
+* How to use css, javascript, images in Spring Mvc WebApp
+
+(** WebContent\resources\css)
+I chose to put everything in the "WebContent/resources" directory. But you can use any name for "resources", such as "assets", "foobar" etc. Also, you can give any name that you want for the subdirectories under "resources".
+
+---
+
+Step 1: Add the following entry to your Spring MVC configuration file: spring-mvc-demo-servlet.xml
+
+You can place this entry anywhere in your Spring MVC config file.
+
+<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources> 
+
+Step 2: Now in your view pages, you can access the static files using this syntax:
+
+<img src="${pageContext.request.contextPath}/resources/images/spring-logo.png"> 
+
+You need to use the JSP expression ${pageContext.request.contextPath} to access the correct root directory for your web application.
+
+Apply the same technique for reading CSS and JavaScript.
+
+---
