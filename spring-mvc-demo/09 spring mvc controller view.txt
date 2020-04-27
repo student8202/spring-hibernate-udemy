@@ -26,6 +26,11 @@ Step 2: Set up URL mapping for Spring MVC Dispatcher Servlet
 		<property name="suffix" value=".jsp" />
 	</bean>
 --------------------------------------
-*
+* Spring Model
+	1. The **Model** is a container for your application data
+	2. In the Controller
+	You can put anything in the **model**
+	strings, objects, info from database, etc,...
+	3. Your View page (jsp) can access data from the **model**
 --------------------------------------
 *

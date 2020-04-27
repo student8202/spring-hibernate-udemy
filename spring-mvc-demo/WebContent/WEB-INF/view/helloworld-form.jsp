@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="actionForm" method="GET">
+	<form action="actionFormVersionTwo" method="GET">
 		<input type="text" name="studentName" placeholder="What is your name?" />
 		<input type="submit"/>
 	</form>

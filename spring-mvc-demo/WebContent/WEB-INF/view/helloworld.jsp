@@ -10,5 +10,7 @@
 	<h2>HELLO WORLD OF SPRING</h2>
 	<hr/>
 	<label>Your name: ${param.studentName}</label>
+	<br/><br/>
+	<label>Your name: ${message}</label>
 </body>
 </html>
