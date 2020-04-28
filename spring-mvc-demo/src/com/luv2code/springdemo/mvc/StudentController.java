@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StudentController {
 	
 	@Value("#{countryOptions}") 
-	private Map<String, String> countryOptions;
+	private Map<String, String> theCountryOptions;
 	
 	@RequestMapping("/showForm")
 	public String showForm(Model theModel) {
@@ -26,7 +26,7 @@ public class StudentController {
 		theModel.addAttribute("student", theStudent);
 		
 		// add the country options to the model 
-	    theModel.addAttribute("theCountryOptions", countryOptions); 
+	    theModel.addAttribute("theCountryOptions", theCountryOptions); 
 		
 		return "student-form";
 	}
