@@ -111,3 +111,13 @@ public String showForm(Model theModel) {
 7. Remove all references to country option from your Student.java.  
 
 ---
+---------------------------------------------------------
+* <form:checkbox path="operatingSystems" value="Linux" />
+data biding (path -> set property/field)
+	In Java code need to add support when user selects multiple options
+	Array of Strings add appropriate get/set methods
+
+---------------------------------------------------------
+* <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	refernce jstl tag library
+use for looping over collection
