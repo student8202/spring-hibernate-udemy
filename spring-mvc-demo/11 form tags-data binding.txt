@@ -1,0 +1,39 @@
+* Spring MVC Form Tags
+	Spring Mvc Form Tags are the building blick for a web page
+	Form Tags are configurable are reuseable for a web page
+---------------------------------
+* Data Binding
+	Spring Mvc Form Tags can make use of data binding	
+	Automatically setting / retriving data from a Java object / bean
+---------------------------------
+* Form tags will generate HTML for you
+	form:form	main form container
+	form:input	text field
+	form:textarea	multi-line text field
+---------------------------------
+* 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+---------------------------------
+* Showing Form
+	In your Spring Controller
+	Before you show the form, you must add a **model attribute**
+	This is a bean that will hold form data for the **data binding**
+---------------------------------
+* Behind the scenes: the object is populated with form data
+---------------------------------
+* Development Process step by step
+1. Create Student class
+2. Create Student controller class
+3. Create html form
+4. Create form processing code
+5. Create confirmation page
+---------------------------------
+* When form is **submitted**, spring mvc will call
+student.setFirstName(...)
+student.setLastName(...)
+---------------------------------
+* When form is **loaded**, spring mvc will call
+student.getFirstName()
+student.getLastName()
+---------------------------------

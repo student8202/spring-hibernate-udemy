@@ -8,5 +8,7 @@
 	<h2> Spring MVC Demmo - Home Page</h2>
 	<hr/>
 	<a href="showForm">Input your student name</a>
+	<br/><br/>
+	<a href="student/showForm">Student register form</a>
 </body>
 </html>
