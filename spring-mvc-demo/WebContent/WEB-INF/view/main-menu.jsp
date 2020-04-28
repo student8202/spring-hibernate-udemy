@@ -10,5 +10,7 @@
 	<a href="showForm">Input your student name</a>
 	<br/><br/>
 	<a href="student/showForm">Student register form</a>
+	<br/><br/>
+	<a href="customer/showForm">Customer form</a>
 </body>
 </html>

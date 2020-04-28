@@ -1,0 +1,52 @@
+* THE NEED FOR VALIDATION
+	1. Check the user input form for:	
+	required fields
+	valid numbers in a range
+	valid format (postal code)
+	custom business rule
+-------------------------------------------
+* Java's standard Bean Validation API
+	Java has a standard Bean Validation Api
+	Defines a metadata model and Api for entity validation
+	Not tied to either the web tier or the persistence tier
+	Available for server-side apps and also client-side JavaFX/Swing apps.
+-------------------------------------------
+* Validation Annotations
+@NotNull, @Min, @Max, @Size, @Pattern, @Future/@Past, others...
+-------------------------------------------
+* The Hivernate Team to the rescue
+	1. Hibernate started as an ORM project
+	2. But in recent years, they have explained into other areas
+	3. They have a fully compliant JSR-303/309 implementation
+	Not tied to ORM or database work... seperate project
+http://www.hivernate.org/validator
+-------------------------------------------
+* Development Process
+	1. Download Validation jar files from Hibernate website
+	2. Add jar files to project
+(required, and hibernate jar files)
+-------------------------------------------
+* **the BindingResult parameter must appear immediately after the model attribute**. 
+
+If you place it in any other location, Spring MVC validation will not work as desired. In fact, your validation rules will be ignored.
+
+        @RequestMapping("/processForm")
+        public String processForm(
+                @Valid @ModelAttribute("customer") Customer theCustomer,
+                BindingResult theBindingResult) {
+            ...            
+        }
+
+Defining @RequestMapping methods
+
+@RequestMapping handler methods have a flexible signature and can choose from a range of supported controller method arguments and return values.
+...
+
+The Errors or BindingResult parameters have to follow the model object that is being bound immediately ...
+-------------------------------------------
+* 
+-------------------------------------------
+* 
+-------------------------------------------
+* 
+-------------------------------------------
