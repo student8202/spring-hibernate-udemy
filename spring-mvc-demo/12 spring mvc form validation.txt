@@ -44,9 +44,15 @@ Defining @RequestMapping methods
 
 The Errors or BindingResult parameters have to follow the model object that is being bound immediately ...
 -------------------------------------------
-* 
+* @InitBinder
+	@InitBinder annotation works as a pre-processor
+	It will pre-process each web request to our controller
+	Method annotated with **@InitBinder** is excuted
 -------------------------------------------
 * 
+StringTrimmerEditor: removes whitespace - leading and trailing
+StrimTrimerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+_ true - means trim to null
 -------------------------------------------
 * 
 -------------------------------------------
